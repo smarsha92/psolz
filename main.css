@@ -80,28 +80,26 @@ header .container {
 /* BUTTONS */
 
 .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: var(--btn-bg-color);
-    color: var(--accent-color);
-    font-family: var(--font-secondary);
-    font-style: italic;
-    font-weight: bold;
-    font-size: 1rem;
-    text-transform: capitalize;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    -webkit-box-shadow: 4px 4px 0 0 var(--accent-color);
-    box-shadow: 4px 4px 0 0 var(--accent-color);
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
     cursor: pointer;
-    position: relative;
-    text-decoration: none;
     outline: none;
 }
 
 .btn:hover {
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
 }
 
 .wallet-btn {
