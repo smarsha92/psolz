@@ -196,6 +196,31 @@ section {
     text-align: center;
 }
 
+.container .btns {
+    margin: 25px 0;
+    display: inline-flex;
+}
+
+.container .btns a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    border: 2px solid #69a6ce;
+    color: #69a6ce;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background-color: rgba(216, 207, 207, 0.459);
+    border: 1px solid rgba(119, 108, 108, 0.534);
+    backdrop-filter: blur(40px);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1024px) {
     .menu {
         gap: 1rem;
