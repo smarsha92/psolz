@@ -66,31 +66,39 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 //Title preview //
-const getTitle = async page => {
-    const title = await page.evaluate(() => {
-        const ogTitle = document.querySelector('meta[property="og:title"]');
-        if (ogTitle != null && ogTitle.content.length > 0) {
-            return ogTitle.content;
+const getDescription = async(page) => {
+    const description = await page.evaluate(() => {
+        const ogDescription = document.querySelector(
+            'meta[property="og:description"]'
+        );
+        if (ogDescription != null && ogDescription.content.length > 0) {
+            return ogDescription.content;
         }
-        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-        if (twitterTitle != null && twitterTitle.content.length > 0) {
-            return twitterTitle.content;
+        const twitterDescription = document.querySelector(
+            'meta[name="twitter:description"]'
+        );
+        if (twitterDescription != null && twitterDescription.content.length > 0) {
+            return twitterDescription.content;
         }
-        const docTitle = document.title;
-        if (docTitle != null && docTitle.length > 0) {
-            return docTitle;
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription != null && metaDescription.content.length > 0) {
+            return metaDescription.content;
         }
-        const h1 = document.querySelector("h1").innerHTML;
-        if (h1 != null && h1.length > 0) {
-            return h1;
+        paragraphs = document.querySelectorAll("p");
+        let fstVisibleParagraph = null;
+        for (let i = 0; i < paragraphs.length; i++) {
+            if (
+                // if object is visible in dom
+                paragraphs[i].offsetParent !== null &&
+                !paragraphs[i].childElementCount != 0
+            ) {
+                fstVisibleParagraph = paragraphs[i].textContent;
+                break;
+            }
         }
-        const h2 = document.querySelector("h1").innerHTML;
-        if (h2 != null && h2.length > 0) {
-            return h2;
-        }
-        return null;
+        return fstVisibleParagraph;
     });
-    return title;
+    return description;
 };
 //end//
 
