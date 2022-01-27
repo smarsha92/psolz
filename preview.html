@@ -15,148 +15,64 @@
     <div class="header">
         <h2>Examples</h2>
     </div>
-    <div class="content">
-        <!-- Images used to open the lightbox -->
-        <div class="row">
-            <div class="column">
-                <div class="card">
-                    <img src="ex/ant.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="ex/jas.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="ex/kay.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="ex/lori.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="ex/nate.png" onclick="openModal();currentSlide(5)" class="hover-shadow">
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="ex/yo.png" onclick="openModal();currentSlide(6)" class="hover-shadow">
-                </div>
-            </div>
-        </div>
-        <!--Gallery-->
-        <div id="gallery">
-            <img src="ex/yo.png" onclick="openModal();currentSlide(6)" class="hover-shadow">
-            <img src="ex/nate.png" onclick="openModal();currentSlide(5)" class="hover-shadow">
-            <img src="ex/lori.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
-            <img src="ex/kay.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
-            <img src="ex/jas.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
-            <img src="ex/ant.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
-        </div>
-        <!--end-->
-        <!-- The Modal/Lightbox 
-        <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
-            <div class="modal-content">
+    <!--Gallery-->
+    <div id="gallery">
+        <img src="ex/yo.png" onclick="openModal();currentSlide(6)" class="hover-shadow">
+        <img src="ex/nate.png" onclick="openModal();currentSlide(5)" class="hover-shadow">
+        <img src="ex/lori.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
+        <img src="ex/kay.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+        <img src="ex/jas.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
+        <img src="ex/ant.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
+    </div>
+    <!--end-->
 
-                <div class="mySlides">
 
-                    <img src="https://picsum.photos/id/684/600/400" style="width:100%">
-                </div>
+    <script>
+        // Open the Modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
 
-                <div class="mySlides">
+        // Close the Modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
 
-                    <img src="https://picsum.photos/id/685/600/400" style="width:100%">
-                </div>
+        var slideIndex = 1;
+        showSlides(slideIndex);
 
-                <div class="mySlides">
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
 
-                    <img src="https://picsum.photos/id/686/600/400" style="width:100%">
-                </div>
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
 
-                <div class="mySlides">
-
-                    <img src="https://picsum.photos/id/687/600/400" style="width:100%">
-                </div>
-                <div class="mySlides">
-
-                    <img src="https://picsum.photos/id/687/600/400" style="width:100%">
-                </div>
-                <div class="mySlides">
-
-                    <img src="https://picsum.photos/id/687/600/400" style="width:100%">
-                </div>
-                <div class="mySlides">
-
-                    <img src="https://picsum.photos/id/687/600/400" style="width:100%">
-                </div>
-                <div class="mySlides">
-
-                    <img src="https://picsum.photos/id/687/600/400" style="width:100%">
-                </div>
-                <div class="mySlides">
-
-                    <img src="https://picsum.photos/id/687/600/400" style="width:100%">
-                </div>
-
-                 Next/previous controls -->
-        <!---
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-                 Caption text -->
-
-        <script>
-            // Open the Modal
-            function openModal() {
-                document.getElementById("myModal").style.display = "block";
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
             }
-
-            // Close the Modal
-            function closeModal() {
-                document.getElementById("myModal").style.display = "none";
+            if (n < 1) {
+                slideIndex = slides.length
             }
-
-            var slideIndex = 1;
-            showSlides(slideIndex);
-
-            // Next/previous controls
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
             }
-
-            // Thumbnail image controls
-            function currentSlide(n) {
-                showSlides(slideIndex = n);
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
             }
-
-            function showSlides(n) {
-                var i;
-                var slides = document.getElementsByClassName("mySlides");
-                var dots = document.getElementsByClassName("demo");
-                var captionText = document.getElementById("caption");
-                if (n > slides.length) {
-                    slideIndex = 1
-                }
-                if (n < 1) {
-                    slideIndex = slides.length
-                }
-                for (i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                    dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-                captionText.innerHTML = dots[slideIndex - 1].alt;
-            }
-        </script>
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
 
 </body>
 
