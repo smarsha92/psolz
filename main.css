@@ -38,6 +38,7 @@ body {
     background-image: url(bg/pixsolz.png);
     background-repeat: repeat;
     background-size: cover;
+    backdrop-filter: blur(10px);
 }
 
 .container {
