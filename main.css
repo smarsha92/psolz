@@ -11,7 +11,7 @@
     --bg-color: #00163f;
     --font-color: #ffffff;
     --btn-bg-color: #ffffff;
-    --accent-color: #be7efe;
+    --accent-color: #7210d4;
     --header-shadow: #000 0px 0px 5px;
 }
 
@@ -35,7 +35,7 @@ body {
     height: 100vh;
     color: var(--font-color);
     font-family: var(--font-primary);
-    background-image: url(bg/wheat.png);
+    background-image: url(bg/pixsolz.png);
     background-repeat: repeat;
     background-size: cover;
 }
