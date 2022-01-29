@@ -102,18 +102,4 @@ const getDescription = async(page) => {
 };
 //end//
 
-//Description//window.addEventListener('load', () => {
-const preloader = document.querySelector('.preloader');
-preloader.classList.add('preloader-finish');
-
-
-var myVar;
-
-function myFunction() {
-    myVar = setTimeout(showPage, 3000);
-}
-
-function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
-}
+//Description//
