@@ -87,6 +87,39 @@ body {
     padding: 1rem 2rem;
 }
 
+.container .btns {
+    margin: 25px 0 !important;
+    display: inline-flex !important;
+}
+
+.container .btns a {
+    display: inline-block !important;
+    margin: 0 10px;
+    text-decoration: none;
+    border: 2px solid #69a6ce;
+    color: #69a6ce;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background-color: rgba(216, 207, 207, 0.459);
+    border: 1px solid rgba(153, 64, 64, 0.534);
+    backdrop-filter: blur(40px);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.container-1 .btns a:hover {
+    background-color: rgba(207, 15, 15, 0.445);
+}
+
+.h6 {
+    font-size: 10px;
+}
+
 
 /* HEADER */
 
