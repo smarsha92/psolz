@@ -34,7 +34,7 @@ body {
     height: 100vh;
     color: var(--font-color);
     font-family: var(--font-primary);
-    background-image: url(/bg/blurry-gradient-haikei.png);
+    background-image: url(/imgs/Above\ Clouds.webm);
     background-repeat: repeat;
     background-size: cover;
     backdrop-filter: blur(10px);
