@@ -34,8 +34,7 @@ body {
     height: 100vh;
     color: var(--font-color);
     font-family: var(--font-primary);
-    background-image: url(/imgs/AboveClouds.webm);
-    background-repeat: repeat;
+    background-image: url(./bg/Sea.svg);
     background-size: cover;
     backdrop-filter: blur(10px);
 }
