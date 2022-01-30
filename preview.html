@@ -6,29 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examples</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+
 </head>
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    
+    @media (min-width: 500px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+</style>
 
 <body oncontextmenu="return false" onload="changeBackground();">
     <!--Start-->
 
     <div class="header">
-        <h2 class="">Paid Pieces</h2>
-        <p>Go Support</p>
+        <h2 class="display-3">Paid Pieces</h2>
+        <h6>Go Support</h6>
         <a href="http://instagram.com/shetall" target="_blank"><img src="./imgs/Instagram_Glyph_Gradient_RGB.png" alt="" width="32px"></a>
     </div>
-    <!--Gallery-->
-    <div id="gallery">
-        <img src="ex/nate.png" alt="nate">
-        <img src="ex/lori.png" alt="lori">
-        <img src="ex/kay.png " alt="kay">
-        <img src="ex/jas.png" alt="jas">
-        <img src="ex/ant.png" alt="ant">
-        <img src="ex/rich.png" alt="rich">
-        <img src="ex/sami.png" alt="sami">
-    </div>
-    <!--end-->
+    <main class="container py-5">
+        <div class="row" data-masonry='{"percentPosition": true }'>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="./ex/ant.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="./ex/lori.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="./ex/sami.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="./ex/kay.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="./ex/rich.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="./ex/nate.png" alt="">
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="./ex/jas.png" alt="">
+                </div>
+            </div>
 
+        </div>
+
+    </main>
+
+
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
 </body>
 
 </html>
