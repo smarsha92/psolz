@@ -1,8 +1,11 @@
 body {
-    background: navajowhite;
+    background: url(./bg/Sea.svg);
     padding: 0;
     background-repeat: no-repeat;
     background-size: contain;
+    padding: 10px;
+    margin: 0 auto;
+    background-attachment: fixed;
 }
 
 .content {
@@ -10,8 +13,20 @@ body {
     margin: auto;
 }
 
-card {
-    background: black !important;
+.card {
+    animation: slidein 3s infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 10%;
+        width: 150%;
+    }
+    to {
+        margin-left: 0%;
+        width: 150%;
+    }
 }
 
 h2,
@@ -30,6 +45,8 @@ h6 {
     -webkit-backdrop-filter: blur( 10px);
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .row {

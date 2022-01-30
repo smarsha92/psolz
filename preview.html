@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examples</title>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="styles.css">
@@ -32,16 +32,17 @@
 <body oncontextmenu="return false" onload="changeBackground();">
     <!--Start-->
 
+
     <div class="header">
-        <h2 class="display-3">Paid Pieces</h2>
-        <h6>Go Support</h6>
+        <h1 class="title">Paid Pieces</h1>
+        <h2 class="subtitle">Go Support</h2>
         <a href="http://instagram.com/shetall" target="_blank"><img src="./imgs/Instagram_Glyph_Gradient_RGB.png" alt="" width="32px"></a>
     </div>
     <main class="container py-5">
         <div class="row" data-masonry='{"percentPosition": true }'>
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card">
-                    <img src="./ex/ant.png" alt="">
+                    <img src="./ex/ant.png" alt="" touch-action:none;>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 mb-4">
@@ -76,9 +77,7 @@
             </div>
 
         </div>
-
     </main>
-
 
     <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
