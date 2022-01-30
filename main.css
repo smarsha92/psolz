@@ -37,6 +37,7 @@ body {
     background-image: url(./bg/maind.svg);
     background-size: cover;
     backdrop-filter: blur(10px);
+    overflow-y: hidden;
 }
 
 
