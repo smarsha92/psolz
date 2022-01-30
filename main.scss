@@ -1,6 +1,52 @@
 /* FONTS */
 
 @import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import 'animate.css';
+@import url(./node_modules/motion-ui/motion-ui.scss);
+@include mui-series {
+    .thing-one {
+        @include mui-queue(1s,
+        0s,
+        fade);
+    }
+    // A 2s pause will happen after this animation ends
+    .thing-two {
+        @include mui-queue(1s,
+        2s,
+        slide($direction: right));
+    }
+    // It works with multiple effects, too!
+    .thing-three {
+        @include mui-queue(2s,
+        0s,
+        spin($direction: ccw), slide($direction: up));
+    }
+    // It works with multiple effects, too!
+    .thing-four {
+        @include mui-queue(2s,
+        0s,
+        spin($direction: ccw), slide($direction: up));
+    }
+    // It works with multiple effects, too!
+    .thing-five {
+        @include mui-queue(2s,
+        0s,
+        spin($direction: ccw), slide($direction: up));
+    }
+    // It works with multiple effects, too!
+    .thing-six {
+        @include mui-queue(2s,
+        0s,
+        spin($direction: ccw), slide($direction: up));
+    }
+    // It works with multiple effects, too!
+    .thing-seven {
+        @include mui-queue(2s,
+        0s,
+        spin($direction: ccw), slide($direction: up));
+    }
+}
+
 
 /* GLOBAL STYLES */
 
@@ -22,13 +68,13 @@
 }
 
 body {
-    background-color: var(--bg-color);
-    display: flex;
-    flex-flow: column;
-    height: 100vh;
-    color: var(--font-color);
-    font-family: var(--font-primary);
-    background-color: aqua;
+    background: url(./bg/Sea.svg);
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 10px;
+    margin: 0 auto;
+    background-attachment: fixed;
 }
 
 .container {
@@ -40,9 +86,16 @@ body {
 
 /* HEADER */
 
-header {
-    box-shadow: var(--header-shadow);
-    background-color: #00163f;
+.header {
+    text-align: center;
+    background: rgba(177, 102, 102, 0.082);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 10px);
+    -webkit-backdrop-filter: blur( 10px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 header .container {

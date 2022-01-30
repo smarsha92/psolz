@@ -13,22 +13,6 @@ body {
     margin: auto;
 }
 
-.card {
-    animation: slidein 3s infinite;
-    animation-direction: alternate-reverse;
-}
-
-@keyframes slidein {
-    from {
-        margin-left: 10%;
-        width: 150%;
-    }
-    to {
-        margin-left: 0%;
-        width: 150%;
-    }
-}
-
 h2,
 h6 {
     text-align: center;
