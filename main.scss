@@ -1,52 +1,6 @@
 /* FONTS */
 
 @import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import 'animate.css';
-@import url(./node_modules/motion-ui/motion-ui.scss);
-@include mui-series {
-    .thing-one {
-        @include mui-queue(1s,
-        0s,
-        fade);
-    }
-    // A 2s pause will happen after this animation ends
-    .thing-two {
-        @include mui-queue(1s,
-        2s,
-        slide($direction: right));
-    }
-    // It works with multiple effects, too!
-    .thing-three {
-        @include mui-queue(2s,
-        0s,
-        spin($direction: ccw), slide($direction: up));
-    }
-    // It works with multiple effects, too!
-    .thing-four {
-        @include mui-queue(2s,
-        0s,
-        spin($direction: ccw), slide($direction: up));
-    }
-    // It works with multiple effects, too!
-    .thing-five {
-        @include mui-queue(2s,
-        0s,
-        spin($direction: ccw), slide($direction: up));
-    }
-    // It works with multiple effects, too!
-    .thing-six {
-        @include mui-queue(2s,
-        0s,
-        spin($direction: ccw), slide($direction: up));
-    }
-    // It works with multiple effects, too!
-    .thing-seven {
-        @include mui-queue(2s,
-        0s,
-        spin($direction: ccw), slide($direction: up));
-    }
-}
-
 
 /* GLOBAL STYLES */
 
@@ -57,82 +11,171 @@
     --bg-color: #00163f;
     --font-color: #ffffff;
     --btn-bg-color: #ffffff;
-    --accent-color: #644385;
+    --accent-color: #1ed3f3;
     --header-shadow: #000 0px 0px 5px;
 }
 
 * {
     padding: 0;
     margin: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 body {
-    background: url(./bg/Sea.svg);
-    padding: 0;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding: 10px;
-    margin: 0 auto;
-    background-attachment: fixed;
+    background-color: var(--bg-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    height: 100vh;
+    color: var(--font-color);
+    font-family: var(--font-primary);
+    background-image: url(./bg/maind.svg);
+    /*  background: url(./bg/pixsolz.png);*/
+    background-size: cover;
+    background-blend-mode: exclusion;
+    overflow-y: hidden;
+    touch-action: manipulation;
 }
 
+
+/* Preload */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background: #ddd7d7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-transition: opacity 2s ease;
+    transition: opacity 2s ease;
+    overflow: hidden;
+}
+
+.preloader h3 {
+    top: 55%;
+    position: absolute;
+}
+
+.loading {
+    height: 75px;
+}
+
+.preloader-finish {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+/* end */
+
 .container {
-    max-width: 960px;
     margin: 0 auto;
     padding: 1rem 2rem;
+}
+
+.container .btns {
+    margin: 25px 0 !important;
+    display: inline-flex !important;
+}
+
+.container .btns a {
+    display: inline-block !important;
+    margin: 0 10px;
+    text-decoration: none;
+    border: 2px solid #69a6ce;
+    color: #69a6ce;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background-color: rgba(216, 207, 207, 0.459);
+    border: 1px solid rgba(153, 64, 64, 0.534);
+    backdrop-filter: blur(40px);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.container-1 .btns a:hover {
+    background-color: rgba(207, 60, 60, 0.445);
+}
+
+.h6 {
+    font-size: 10px;
 }
 
 
 /* HEADER */
 
-.header {
-    text-align: center;
-    background: rgba(177, 102, 102, 0.082);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 10px);
-    -webkit-backdrop-filter: blur( 10px);
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18);
-    max-width: 600px;
-    margin: 0 auto;
+header {
+    -webkit-box-shadow: var(--header-shadow);
+    box-shadow: var(--header-shadow);
 }
 
 header .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
 .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 2rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    text-decoration: none;
 }
 
 
 /* BUTTONS */
 
 .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: var(--btn-bg-color);
-    color: var(--accent-color);
-    font-family: var(--font-secondary);
-    font-style: italic;
-    font-weight: bold;
-    font-size: 1rem;
-    text-transform: capitalize;
-    transition: all 0.3s ease;
-    box-shadow: 4px 4px 0 0 var(--accent-color);
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
     cursor: pointer;
-    position: relative;
-    text-decoration: none;
     outline: none;
 }
 
 .btn:hover {
-    box-shadow: none;
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 0px rgba(46, 229, 157, 0.4);
+    color: #fff;
 }
 
 .wallet-btn {
@@ -151,20 +194,33 @@ header .container {
 /* COUNTDOWN SECTION */
 
 section {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
 
 .countdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     height: 100%;
 }
 
 .countdown ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    gap: 2rem
+    gap: 2rem;
 }
 
 .countdown .clock-item {
@@ -215,7 +271,44 @@ section {
     text-align: center;
 }
 
-@media screen and (max-width: 768px) {
+.container .btns {
+    margin: 25px 0;
+    display: inline-flex;
+}
+
+.container .btns a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    border: 2px solid #69a6ce;
+    color: #69a6ce;
+    font-weight: 500;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background-color: rgba(216, 207, 207, 0.459);
+    border: 1px solid rgba(119, 108, 108, 0.534);
+    backdrop-filter: blur(40px);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem
+}
+
+@media screen and (max-width: 1024px) {
     .menu {
         gap: 1rem;
     }
@@ -231,3 +324,6 @@ section {
         font-size: 1rem;
     }
 }
+
+
+/*# sourceMappingURL=main.css.map */
