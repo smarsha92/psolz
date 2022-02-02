@@ -11,6 +11,9 @@
     <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
 
 </head>
 <style>
@@ -68,11 +71,13 @@
 </style>
 
 <body oncontextmenu="return false" class="dark-mode">
+    <script src="https://cdns.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="./scripts/ScrollTrigger.js"></script>
     <!--Start-->
     <div class="header slide-bottom">
         <h1 class="title">Paid Pieces</h1>
         <h2 class="subtitle">Go Support</h2>
-        <a href="http://instagram.com/shetall" target="_blank"><img src="./imgs/Instagram_Glyph_Gradient_RGB.webp" alt="" width="32px"></a>
+        <a href="http://instagram.com/shetall" target="_blank"><img src="./imgs/Instagram_Glyph_Gradient_RGB.png" alt="" width="32px"></a>
     </div>
 
     <main class="container py-5">
@@ -130,6 +135,66 @@
 
         // All animations will take half the time to accomplish
         document.documentElement.style.setProperty('--animate-duration', '.5s');
+    </script>
+    <script src="customScript.js"></script>
+    <script>
+        // usage:
+        batch(".card", {
+            interval: 0.1, // time window (in seconds) for batching to occur. The first callback that occurs (of its type) will start the timer, and when it elapses, any other similar callbacks for other targets will be batched into an array and fed to the callback. Default is 0.1
+            batchMax: 3, // maximum batch size (targets)
+            onEnter: batch => gsap.to(batch, {
+                autoAlpha: 1,
+                stagger: 0.15,
+                overwrite: true
+            }),
+            onLeave: batch => gsap.set(batch, {
+                autoAlpha: 0,
+                overwrite: true
+            }),
+            onEnterBack: batch => gsap.to(batch, {
+                autoAlpha: 1,
+                stagger: 0.15,
+                overwrite: true
+            }),
+            onLeaveBack: batch => gsap.set(batch, {
+                    autoAlpha: 0,
+                    overwrite: true
+                })
+                // you can also define things like start, end, etc.
+        });
+
+
+
+
+        // the magical helper function (no longer necessary in GSAP 3.3.1 because it was added as ScrollTrigger.batch())...
+        function batch(targets, vars) {
+            let varsCopy = {},
+                interval = vars.interval || 0.1,
+                proxyCallback = (type, callback) => {
+                    let batch = [],
+                        delay = gsap.delayedCall(interval, () => {
+                            callback(batch);
+                            batch.length = 0;
+                        }).pause();
+                    return self => {
+                        batch.length || delay.restart(true);
+                        batch.push(self.trigger);
+                        vars.batchMax && vars.batchMax <= batch.length && delay.progress(1);
+                    };
+                },
+                p;
+            for (p in vars) {
+                varsCopy[p] = (~p.indexOf("Enter") || ~p.indexOf("Leave")) ? proxyCallback(p, vars[p]) : vars[p];
+            }
+            gsap.utils.toArray(targets).forEach(target => {
+                let config = {};
+                for (p in varsCopy) {
+                    config[p] = varsCopy[p];
+                }
+                config.trigger = target;
+                ScrollTrigger.create(config);
+            });
+        }
     </script>
 </body>
 
