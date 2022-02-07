@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nft.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background-color: rgb(73, 59, 59);
+        font-family: Inter, sans-serif;
+        color: #0f0f0f;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: -0.2px;
+    }
+    
+    .container {
+        display: block;
+        width: 100%;
+        max-width: 1230px;
+        min-height: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-right: 50px;
+        padding-left: 50px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    
+    .container .center {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .section {
+        overflow: hidden;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        position: relative;
+        z-index: 0;
+    }
+    
+    .container::before,
+    .container::after {
+        content: "";
+        display: table;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 2;
+        grid-row-end: 2;
+    }
+    
+    .slider-wrapper {
+        width: 200%;
+        will-change: transform;
+        transform: translate3d();
+    }
+    
+    .sliding-grid {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .test-image {
+        width: 100%;
+        display: block;
+        max-width: none;
+    }
+    
+    img {
+        border: 0;
+        display: inline-block;
+        max-width: 100%;
+    }
+</style>
+
+<body>
+    <div class="slider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png" height="100" width="250" alt="" />
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="slider-wrapper">
+                <div role="list" class="sliding-grid">
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+
+                </div>
+            </div>
+            <div class="slider-wrapper">
+                <div role="list" class="sliding-grid">
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+
+                </div>
+            </div>
+            <div class="slider-wrapper">
+                <div role="list" class="sliding-grid">
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+                    <div role="list-item" class="item-1">
+                        <img src="https://picsum.photos/id/684/400/400" class="test-image">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
