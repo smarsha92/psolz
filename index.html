@@ -1,86 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    <meta name="description" content="Pixsolz NFT Drop Coming Soon. Connect your wallet and join our community!">
     <meta name="twitter:card" content="summary">
     <meta property="og:title" content="Pixsolz est. 2022" />
-    <meta property="og:type" content="video.movie" />
-    <meta property="og:url" content="pixsolz.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pixsolz.com" />
     <meta property="og:image" content="https://i.ibb.co/F3yV9pJ/newlogo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
     <title>Pixsolz</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-    <div class="preloader" class="animate-bottom">
-        <img class="loading" src="https://s.svgbox.net/loaders.svg?ic=oval" alt="loading">
-        <div class="rolling"></div>
+    <!-- Preloader -->
+    <div class="preloader animate-bottom" role="status" aria-label="Loading">
+        <img class="loading" src="https://s.svgbox.net/loaders.svg?ic=oval" alt="Loading animation" width="64" height="64" loading="lazy">
+        <div class="rolling" aria-hidden="true"></div>
         <h3>Welcome</h3>
     </div>
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
-                <a href="/">
-                    <img src="./imgs/newlogo.png" width="px" alt="logo">
+                <a href="/" aria-label="Pixsolz homepage">
+                    <img src="./imgs/newlogo.png" width="120" alt="Pixsolz logo" loading="lazy">
                 </a>
             </div>
-            <div class="menu">
+            <nav class="menu" aria-label="Social links and wallet">
                 <a href="https://discord.gg/C6WVUsXw" target="_blank" rel="noopener noreferrer">
-                    <img src="imgs/Discord-Logo-Black.png" alt="Discord" width="32">
+                    <img src="imgs/Discord-Logo-Black.png" alt="Discord" width="32" height="32" loading="lazy">
                 </a>
                 <a href="https://twitter.com/pixsolz" target="_blank" rel="noopener noreferrer">
-                    <img src="imgs/Twitter social icons - circle - blue.png" alt="Twitter" width="32">
+                    <img src="imgs/Twitter social icons - circle - blue.png" alt="Twitter" width="32" height="32" loading="lazy">
                 </a>
                 <a href="https://opensea.io/Pixsolz" target="_blank" rel="noopener noreferrer">
-                    <img src="imgs/Logomark-Blue.png" alt="Opensea" width="32">
+                    <img src="imgs/Logomark-Blue.png" alt="Opensea" width="32" height="32" loading="lazy">
                 </a>
                 <a href="https://instagram.com/Pixsouls21" target="_blank" rel="noopener noreferrer">
-                    <img src="imgs/Instagram_Glyph_Gradient_RGB.png" alt="IG" width="32">
+                    <img src="imgs/Instagram_Glyph_Gradient_RGB.png" alt="Instagram" width="32" height="32" loading="lazy">
                 </a>
-                <button class="wallet-btn btn" id="connectWallet">
-            <span>Connect Wallet</span>
-          </button>
-            </div>
+                <button class="wallet-btn btn" id="connectWallet" type="button">
+                    <span>Connect Wallet</span>
+                </button>
+            </nav>
         </div>
     </header>
-
-    <section class="container">
-        <div class="countdown">
-            <h1>NFT Drop Coming Soon!!</h1>
-        </div>
-    </section>
-
-    <!--Footer-->
-    <div class="footer-basic"></div>
-    <!--End-->
-
-    <script src="https://cdn.jsdelivr.net/npm/@metamask/onboarding@1.0.1/dist/metamask-onboarding.bundle.js"></script>
-    <script src="app.js"></script>
-    <script>
-        window.addEventListener('load', () => {
-            const preloader = document.querySelector('.preloader');
-            preloader.classList.add('preloader-finish');
-        })
-
-        var myVar;
-
-        function myFunction() {
-            myVar = setTimeout(showPage, 3000);
-        }
-
-        function showPage() {
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("myDiv").style.display = "block";
-        }
-    </script>
+    <!-- Main Content -->
+    <main>
+        <section class="container">
+            <div class="countdown">
+                <h1>NFT Drop Coming Soon!!</h1>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
     <footer class="footer-basic">
         <p class="copyright">Pixsolz © 2022</p>
     </footer>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@metamask/onboarding@1.0.1/dist/metamask-onboarding.bundle.js"></script>
+    <script src="app.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        // Preloader fade-out for better UX and accessibility
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.classList.add('preloader-finish');
+                preloader.setAttribute('aria-hidden', 'true');
+            }
+        });
+    </script>
 </body>
-
 </html>

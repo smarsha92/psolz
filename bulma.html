@@ -1,72 +1,84 @@
 <!DOCTYPE html>
-<html lang="">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Title Page</title>
+  <!-- Updated Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Latest Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-
 <body>
-    <nav class="nav">
-        <div class="nav-left">
-            <a class="nav-item">
-                <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
-            </a>
+  <!-- Modern Bulma Navbar -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma logo">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">Home</a>
+        <a class="navbar-item">Documentation</a>
+        <a class="navbar-item">Blog</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a class="icon is-large" href="#" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="icon is-large" href="#" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
-
-        <div class="nav-center">
-            <a class="nav-item">
-                <span class="icon">
-                <i class="fa fa-github"></i>
-              </span>
-            </a>
-            <a class="nav-item">
-                <span class="icon">
-                <i class="fa fa-twitter"></i>
-              </span>
-            </a>
-        </div>
-
-        <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
-        <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-        <span class="nav-toggle">
-            <span></span>
-        <span></span>
-        <span></span>
-        </span>
-
-        <!-- This "nav-menu" is hidden on mobile -->
-        <!-- Add the modifier "is-active" to display it on mobile -->
-        <div class="nav-right nav-menu">
-            <a class="nav-item">
-              Home
-            </a>
-            <a class="nav-item">
-              Documentation
-            </a>
-            <a class="nav-item">
-              Blog
-            </a>
-
-            <span class="nav-item">
-              <a class="button" >
-                <span class="icon">
-                  <i class="fa fa-twitter"></i>
-                </span>
-            <span>Tweet</span>
-            </a>
+        <div class="navbar-item">
+          <div class="buttons">
             <a class="button is-primary">
-                <span class="icon">
-                  <i class="fa fa-download"></i>
-                </span>
-                <span>Download</span>
+              <span class="icon"><i class="fab fa-twitter"></i></span>
+              <span>Tweet</span>
             </a>
-            </span>
+            <a class="button is-light">
+              <span class="icon"><i class="fas fa-download"></i></span>
+              <span>Download</span>
+            </a>
+          </div>
         </div>
-    </nav>
-</body>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
+  <section class="hero is-primary is-bold">
+    <div class="hero-body">
+      <p class="title">Welcome to My Site</p>
+      <p class="subtitle">Fresh, modern, and built with Bulma</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>© 2025 Your Name. Built with Bulma.</p>
+    </div>
+  </footer>
+
+  <!-- Navbar Burger Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.querySelector('.navbar-burger');
+      const menu = document.getElementById(burger.dataset.target);
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+      });
+    });
+  </script>
+</body>
 </html>
